@@ -10,9 +10,12 @@ class ImageScroller(tk.Frame):
         
         # Initialization
         self.path = kw.pop('path', None)
+        self.width = kw.pop('width', None)
+        self.height = kw.pop('height', None)
+        self.bg = kw.pop('bg', None)
         sw = kw.pop('scrollbarwidth', 10)
         super(ImageScroller, self).__init__(master=master, **kw)
-        self.canvas = tk.Canvas(self, bg="#181819", highlightthickness=0, **kw)
+        self.canvas = tk.Canvas(self, width=self.width, height=self.height, bg=self.bg, highlightthickness=0, **kw)
         
         # List of images
         self.images = []
@@ -90,10 +93,10 @@ class ImageScroller(tk.Frame):
         for name in os.listdir(self.path):
             img = Image.open(os.path.join(self.path, name))
             
-            # Rescales all images to 720px
-            if img.width != 720:
+            # Rescales all images to width
+            if img.width != self.width:
                 scale = img.height / img.width
-                img = img.resize((720, int(720 * scale)), Image.Resampling.LANCZOS)
+                img = img.resize((self.width, int(self.width * scale)), Image.Resampling.LANCZOS)
 
             # Adds to list to prevent garbage collection
             self.images.append(ImageTk.PhotoImage(img))
@@ -114,6 +117,6 @@ if __name__ == "__main__":
     # Insert path to folder of images here
     path = "C:\Solo Leveling\Chapter 0"
     
-    frame = ImageScroller(window, path=path, scrollbarwidth=15, width=720, height=800)
+    frame = ImageScroller(window, path=path, scrollbarwidth=15, width=720, height=800, bg="white")
     frame.pack()
     window.mainloop()
