@@ -2,7 +2,7 @@
 
 <font size="3">
 
-<a href="https://github.com/Aeonss/VerticalImageScroller/releases/latest/">VerticalImageScroller</a> is a custom python class which creates seamless scrollable vertical images using Tkinter. Originally created for webtoon/manga chapters, but can be adapted for anything else.
+<a href="https://github.com/Aeonss/VerticalImageScroller/blob/main/VerticalScroller.py">VerticalImageScroller</a> is a custom python class which creates seamless scrollable vertical images using Tkinter. Originally created for webtoon/manga chapters, but can be adapted for anything else.
 
 
 ## 🔨 &nbsp; Installation
