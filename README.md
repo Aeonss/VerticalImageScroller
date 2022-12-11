@@ -17,9 +17,6 @@ https://github.com/Aeonss/VerticalImageScroller/blob/main/VerticalScroller.py
 ```
 
 ## 🚀 &nbsp; Usage
-
-
-Get figure information with figure id
 ``` bash
 from VerticalScroller import ImageScroller
 
